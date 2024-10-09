@@ -33,7 +33,7 @@ JMeter는 성능 테스트와 부하 테스트에 널리 사용되는 오픈 소
 ## 💻 시스템 환경 및 소프트웨어
 - **소프트웨어**: Mobaxterm  
 - **클라우드 서비스**: AWS EC2  
-- **운영 체제**: Ubuntu  
+- **운영 체제**: Ubuntu, Windows  
 - **성능 테스트 도구**: JMeter  
 
 <br/>
@@ -44,7 +44,7 @@ JMeter는 성능 테스트와 부하 테스트에 널리 사용되는 오픈 소
 
 2. 해당 파일 다운로드 후 압축 해제
    
-   <img src="https://github.com/user-attachments/assets/521bdf88-05b9-4242-8a0f-323498b8d43f" width="550">
+   <img src="https://github.com/user-attachments/assets/521bdf88-05b9-4242-8a0f-323498b8d43f" width="70%">
 
 4.  JMeter 경로로 이동
    ```bash
@@ -67,9 +67,12 @@ jmeter.bat
 
 2. EC2 서버 배포
    ```bash
-   # 로컬(윈도우)에서 EC2(우분투)로  Spring 애플리케이션 배포
+   # 로컬(윈도우)에서 EC2(우분투)로 Spring 애플리케이션 배포
    scp -i {pem key} {Spring 애플리케이션 경로}  {username}@{ip}:/home/ubuntu
    ```
+   <img src="https://github.com/user-attachments/assets/9ab9f6b3-36f9-4ca2-9514-7f8b80a74873" width="55%">
+  
+
 <br/>
 
 ## 🧪 JMeter 시나리오 테스트
