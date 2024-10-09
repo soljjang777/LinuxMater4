@@ -46,17 +46,22 @@ JMeter는 성능 테스트와 부하 테스트에 널리 사용되는 오픈 소
    
    <img src="https://github.com/user-attachments/assets/521bdf88-05b9-4242-8a0f-323498b8d43f" width="550">
 
-3. `jmeter.bat` 실행  
+4.  JMeter 경로로 이동
    ```bash
-   apache-jmeter-5.6.3\bin\jmeter.bat
+   cd C:\apache-jmeter-5.6.3\bin
    ```
+
+5. `jmeter.bat` 실행  
+```bash
+jmeter.bat
+```
 
 <br/>
 
 ## 2️⃣ 테스트 준비 전: Spring 애플리케이션 생성 및 EC2 서버 배포 
 1. Spring 애플리케이션 생성
    
-   - **Get** 요청(localhost:8088/test) 시  로그에 "요청 들어왔습니다" 확인 됨
+   - Spring 애플리케이션에서 화면에 "Click Me" 버튼을 클릭하면, 이 버튼이 `localhost:8088/test`로 `GET 요청`을 보냅니다. 서버는 요청을 수신하고, 컨트롤러 메서드에서 "요청 들어왔습니다"라는 로그를 남깁니다.
    
    <img src="https://github.com/user-attachments/assets/ccb9b9a0-df53-4f1a-a25f-4362981bc0b5" width="70%">
 
