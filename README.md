@@ -38,7 +38,7 @@ JMeter는 성능 테스트와 부하 테스트에 널리 사용되는 오픈 소
 
 <br/>
 
-## 1️⃣ 테스트 준비 전: JMeter 설치
+## 1️⃣ 테스트 준비 전: JMeter 설치 및 플러그인 설치
 **1. [JMeter](https://jmeter.apache.org/download_jmeter.cgi) 접속**
    
 
@@ -46,17 +46,33 @@ JMeter는 성능 테스트와 부하 테스트에 널리 사용되는 오픈 소
    
    <img src="https://github.com/user-attachments/assets/521bdf88-05b9-4242-8a0f-323498b8d43f" width="70%">
 
-**4.  JMeter 경로로 이동**
+**3.  JMeter 경로로 이동**
    ```bash
    cd C:\apache-jmeter-5.6.3\bin
    ```
 
-**5. `jmeter.bat` 실행**  
+**4. `jmeter.bat` 실행**  
 ```bash
 jmeter.bat
 ```
 
+**5. [JMeter Installing Plugins](https://jmeter-plugins.org/install/Install/) 접속**  
+
+**6. `plugins-manager.jar` 다운로드**
+   ```bash
+   # 아래 경로에 위치 하도록 다운로드 하기
+   C:\apache-jmeter-5.6.3\lib\ext
+   ```
+
+**7. `jmeter.bat` 재실행**
+
+**8. JMeter에서 Option메뉴에 Plugins Manager 생성 됨**
+
+   <img src="https://github.com/user-attachments/assets/bd4c1ab4-c407-483d-8f59-ab076f73291c" width="40%">
+
+
 <br/>
+
 
 ## 2️⃣ 테스트 준비 전: Spring 애플리케이션 생성 및 EC2 서버 배포 
 **1. Spring 애플리케이션 생성**
@@ -70,11 +86,11 @@ jmeter.bat
    # 로컬(윈도우)에서 EC2(우분투)로 Spring 애플리케이션 배포
    scp -i {pem key} {Spring 애플리케이션 경로}  {username}@{ip}:/home/ubuntu
    ```
-   <img src="https://github.com/user-attachments/assets/2311ff85-a544-4c8c-8083-38552f59a128" width="55%">
+   <img src="https://github.com/user-attachments/assets/2311ff85-a544-4c8c-8083-38552f59a128" width="60%">
 
   
 
-<br/>
+<br/><br/>
 
 ## 🧪 JMeter 시나리오 테스트
 
@@ -92,14 +108,15 @@ jmeter.bat
 - **Loop Count**:  
   각 스레드는 5번 요청을 반복합니다. 총 요청 수는 100 스레드 × 5 루프 = 500 요청이 됩니다.  
 
-  <img src="https://github.com/user-attachments/assets/beb21479-582b-46ec-bd6f-f0da9ac6f71e" width="550">
+  <img src="https://github.com/user-attachments/assets/beb21479-582b-46ec-bd6f-f0da9ac6f71e" width="70%">
 
 <br/>
 
 ## 🍂 성능 테스트 결과
 
 #### 이미지 1: Summary Report (테스트의 전반적인 성능을 평가)
-<img src="https://github.com/user-attachments/assets/76333f5a-dc54-4509-b30d-b3b493dfcd01" width="70%">
+<img src="https://github.com/user-attachments/assets/56da3ba8-a5e3-4f30-9681-e347d8c1204e" width="70%">
+
 
 - **Sample (샘플 수)**:  
   총 5000개의 요청이 테스트되었습니다. 이는 테스트의 전반적인 부하를 나타냅니다.
@@ -132,7 +149,8 @@ jmeter.bat
   평균적으로 요청당 177.0 KB의 데이터가 전송되었습니다. 이는 각 요청이 클라이언트와 서버 간에 얼마나 많은 데이터를 주고받는지를 보여줍니다.
 
 #### 이미지 2: Transactions per Second (주어진 시간 동안 처리된 트랜잭션 수 확인)
-<img src="https://github.com/user-attachments/assets/bd8a94a0-d6ce-455c-b2a7-51ad8b8530fd" width="70%">
+<img src="https://github.com/user-attachments/assets/c18c6c60-d5a7-4c13-b165-da1245e2dbea" width="70%">
+
 
 1. **6초까지 160 TPS**:  
    초기 부하가 급격히 증가하여 서버가 초당 160개의 요청을 처리할 수 있는 상태입니다. 이는 서버가 부하를 잘 처리하고 있다는 긍정적인 신호입니다.
