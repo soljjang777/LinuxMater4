@@ -70,7 +70,8 @@ jmeter.bat
    # 로컬(윈도우)에서 EC2(우분투)로 Spring 애플리케이션 배포
    scp -i {pem key} {Spring 애플리케이션 경로}  {username}@{ip}:/home/ubuntu
    ```
-   <img src="https://github.com/user-attachments/assets/9ab9f6b3-36f9-4ca2-9514-7f8b80a74873" width="55%">
+   <img src="https://github.com/user-attachments/assets/2311ff85-a544-4c8c-8083-38552f59a128" width="55%">
+
   
 
 <br/>
